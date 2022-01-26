@@ -2205,8 +2205,8 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//#define MINIMUM_STEPPER_POST_DIR_DELAY 650
-//#define MINIMUM_STEPPER_PRE_DIR_DELAY 650
+#define MINIMUM_STEPPER_POST_DIR_DELAY 20
+#define MINIMUM_STEPPER_PRE_DIR_DELAY 20
 
 /**
  * Minimum stepper driver pulse width (in µs)
@@ -2219,7 +2219,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//#define MINIMUM_STEPPER_PULSE 2
+#define MINIMUM_STEPPER_PULSE 1
 
 /**
  * Maximum stepping rate (in Hz) the stepper driver allows
@@ -2233,7 +2233,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//#define MAXIMUM_STEPPER_RATE 250000
+#define MAXIMUM_STEPPER_RATE 400000
 
 // @section temperature
 
@@ -2260,7 +2260,7 @@
 
 // The ASCII buffer for serial input
 #define MAX_CMD_SIZE 96
-#define BUFSIZE 4
+#define BUFSIZE 32
 
 // Transmission to Host Buffer Size
 // To save 386 bytes of PROGMEM (and TX_BUFFER_SIZE+3 bytes of RAM) set to 0.
@@ -2947,12 +2947,12 @@
    * Use Trinamic's ultra quiet stepping mode.
    * When disabled, Marlin will use spreadCycle stepping mode.
    */
-  #define STEALTHCHOP_XY
-  #define STEALTHCHOP_Z
-  #define STEALTHCHOP_I
-  #define STEALTHCHOP_J
-  #define STEALTHCHOP_K
-  #define STEALTHCHOP_E
+  //#define STEALTHCHOP_XY
+  //#define STEALTHCHOP_Z
+  //#define STEALTHCHOP_I
+  //#define STEALTHCHOP_J
+  //#define STEALTHCHOP_K
+  //#define STEALTHCHOP_E
 
   /**
    * Optimize spreadCycle chopper parameters by using predefined parameter sets
@@ -2969,7 +2969,7 @@
    * Define your own with:
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
-  #define CHOPPER_TIMING CHOPPER_DEFAULT_12V        // All axes (override below)
+  #define CHOPPER_TIMING CHOPPER_DEFAULT_24V        // All axes (override below)
   //#define CHOPPER_TIMING_X  CHOPPER_TIMING        // For X Axes (override below)
   //#define CHOPPER_TIMING_X2 CHOPPER_TIMING_X
   //#define CHOPPER_TIMING_Y  CHOPPER_TIMING        // For Y Axes (override below)
@@ -3098,7 +3098,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  //#define SQUARE_WAVE_STEPPING
+  #define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
